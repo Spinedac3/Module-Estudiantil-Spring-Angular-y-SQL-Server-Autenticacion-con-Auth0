@@ -1,0 +1,19 @@
+<br>
+<div class="card">  
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">      
+        <div class='row'>
+            <div class='col-md-4'>Ingrese ID de Usuario: {{id}}</div>
+            <div class='col-md-4'>
+              <input type='number'
+                     [(ngModel)]='id'  min="1"/>
+            </div>            
+          <div class="col-md-4">
+              <button class="btn btn-success" [routerLink]="['/notas', id]">Consultar Nota</button>
+            </div>
+        </div>
+    </div>
+   
+</div>
