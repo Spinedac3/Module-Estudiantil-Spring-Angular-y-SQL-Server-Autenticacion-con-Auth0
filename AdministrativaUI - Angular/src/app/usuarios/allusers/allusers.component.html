@@ -1,0 +1,56 @@
+<br>
+<div class="card">
+  <div class="card-header">
+      {{pageTitle}}
+  </div>
+  <div class="card-body">
+      <div class='row'>
+          <div class='col-md-2'>Filtrado por: {{listFilter}}</div>
+          <div class='col-md-4'>
+            <input type='text'
+                   [(ngModel)]='listFilter' />
+          </div>
+          <div class="col-md-6">
+            <button (click)="cerrarSesion()" class="btn btn-danger">Cerrar Sesion</button>
+          </div>
+      </div>   
+      <br>
+      <div class="table-responsive">
+          <table class='table'
+          *ngIf='users && users.length'>
+            <thead>
+              <tr>
+                <th>ID </th>
+                <th>Tipo </th>
+                <th>Nombre </th>
+                <th>Apellido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let user of filteredUsers'>
+                <td>{{user.id_usuario}}</td>
+                <td>{{user.id_tipo_usuario}}</td>
+                <td> <a [routerLink]="['/usuarios/allusers', user.id_usuario]">{{user.nombre}}</a> </td>
+                <td>{{user.apellido}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+  </div>
+  <div class="card-footer">
+    <div class="container">
+      <div class="row">
+    <div class="col-md-10">
+      <button class="btn btn-outline-secondary" style='width:120px' [routerLink]="['/usuarios']"> <i class='fa fa-chevron-left'></i> Regresar </button>
+    </div>
+    <div class="col-md-2">
+        <p-button label="Crear Usuario" [routerLink]="['/create']"></p-button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

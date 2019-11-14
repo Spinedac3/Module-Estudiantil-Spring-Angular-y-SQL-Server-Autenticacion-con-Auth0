@@ -1,0 +1,25 @@
+<br>
+  <h2>Detalles de Asignaciones de Alumnos </h2>
+<br>
+<div class="container form-group row" *ngIf="asignaciondetail" >
+    <label class="col-2 col-form-label">ID Asignación: </label>
+    <div class="col-10">
+        <input class="form-control" type="number" value="{{ asignaciondetail.id_asignatura_usuario}}" name="" min="1" disabled>
+    </div>
+    <label class="col-2 col-form-label">ID Alumno: </label>
+    <div class="col-10">
+        <input class="form-control" type="number" value="{{ asignaciondetail.id_usuario}}" name="" min="1" disabled>
+    </div>
+    <label class="col-2 col-form-label">ID Asignatura: </label>
+    <div class="col-10">
+        <input class="form-control" type="number" value="{{ asignaciondetail.id_asignatura_usuario}}" name="" min="1" disabled>
+    </div>
+</div>
+<div class="form-group row">
+<div class="col-10">
+        <button (click)="deleteAsignacion(asignaciondetail.id_asignatura_usuario)" class="btn btn-danger">Eliminar Asignación</button>
+</div>
+<div class="col-2">
+        <button class="btn btn-outline-secondary" style='width:120px' [routerLink]="['/alumnos/asignaciones']"> <i class='fa fa-chevron-left'></i> Regresar </button>
+</div>
+</div>

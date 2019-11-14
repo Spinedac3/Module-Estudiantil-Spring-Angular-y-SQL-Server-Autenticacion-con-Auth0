@@ -1,0 +1,30 @@
+<br>
+<h2>Detalles de las Credenciales del Usuario</h2>
+<br>
+<div class="container form-group row" *ngIf="credencialdetail" >
+  <label class="col-2 col-form-label">ID Credencial: </label>
+  <div class="col-10">
+      <input class="form-control" type="number" value="{{ credencialdetail.id_usuario_acceso}}" name="" min="1" disabled>
+  </div>
+  <label class="col-2 col-form-label">ID Usuario: </label>
+  <div class="col-10">
+      <input class="form-control" type="number" value="{{ credencialdetail.id_usuario}}" name="" min="1" disabled>
+  </div>
+  <label class="col-2 col-form-label">Usuario: </label>
+  <div class="col-10">
+      <input class="form-control" type="text" value="{{ credencialdetail.login}}" name="" min="1" disabled>
+  </div>
+  <label class="col-2 col-form-label">Contraseña: </label>
+  <div class="col-10">
+      <input class="form-control" type="password" value="{{ credencialdetail.password}}" name="" min="1" disabled>
+  </div>
+</div>
+<div class="form-group row">
+        <div class="col-10">
+                <button (click)="deleteCredencial(credencialdetail.id_usuario_acceso)" class="btn btn-danger">Eliminar Credencial</button>
+        </div>
+        <div class="col-2">
+                <button class="btn btn-outline-secondary" style='width:120px' [routerLink]="['/credenciales']"> <i class='fa fa-chevron-left'></i> Regresar </button>
+        </div>
+    
+</div>

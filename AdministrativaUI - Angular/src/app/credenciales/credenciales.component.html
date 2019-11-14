@@ -1,0 +1,46 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+            <div class='row'>
+                 <div class='col-md-2'>Filtrado por: {{listFilter}}</div>
+                 <div class='col-md-4'>
+                     <input type='text'
+                         [(ngModel)]='listFilter' />
+                </div>
+            </div> 
+            <br>
+            <div class="table-responsive">
+                <table class='table'
+                    *ngIf='credenciales && credenciales.length'> 
+                    <thead>
+                        <tr>
+                         <th>ID de Credencial</th>
+                         <th>ID Usuario</th>
+                         <th>Usuario </th>
+                         <th>Contraseña</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                            <tr *ngFor='let credencial of filteredCredenciales'>
+                              <td>{{credencial.id_usuario_acceso}}</td>
+                              <td>{{credencial.id_usuario}}</td>
+                              <td> <a [routerLink]="['/credenciales', credencial.id_usuario_acceso]">{{credencial.login}}</a></td>
+                              <td> {{credencial.password | enmascarado: credencial.password}}</td>
+                            </tr>
+                    </tbody>   
+                </table>
+            </div>
+    </div>
+    <div class="card-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p-button label="Crear Credencial" [routerLink]="['/create/credencial']"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

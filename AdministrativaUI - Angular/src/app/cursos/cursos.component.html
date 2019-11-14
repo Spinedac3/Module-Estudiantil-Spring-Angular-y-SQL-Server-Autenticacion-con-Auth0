@@ -1,0 +1,44 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class='row'>
+            <div class='col-md-2'>Filtrado por: {{listFilter}}</div>
+            <div class='col-md-4'>
+                <input type='text'
+                    [(ngModel)]='listFilter' />
+           </div>
+       </div> 
+       <br>
+       <div class="table-responsive"> 
+          <table class='table'
+                    *ngIf='cursos && cursos.length'> 
+                    <thead>
+                        <tr>
+                         <th>ID de Curso</th>
+                         <th>Nombre</th>
+                         <th>Descripcion </th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <tr *ngFor='let curso of filteredCursos'>
+                          <td>{{curso.id_curso}}</td>
+                          <td><a [routerLink]="['/cursos', curso.id_curso]">{{curso.nombre}}</a></td>
+                          <td>{{curso.descripcion}}</td>
+                        </tr>
+                   </tbody>   
+          </table>
+       </div>
+    </div>
+    <div class="card-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <p-button label="Crear Curso" [routerLink]="['/create/curso']"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

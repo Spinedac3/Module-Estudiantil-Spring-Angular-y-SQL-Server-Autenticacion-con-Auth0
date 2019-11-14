@@ -1,0 +1,50 @@
+<br>
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="submitRegistration()" novalidate>
+        <div *ngIf="validMessage != ''">
+            <h3 class="has-info">{{validMessage}}</h3>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">ID del Profesor: </label>
+            <div class="col-10">
+              <input type="number" class="form-control" formControlName="id_profesor" min="1" required autofocus/>
+            </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-2 col-form-label">ID del Curso: </label>
+              <div class="col-10">
+                <input type="number" class="form-control" formControlName="id_curso" min="1" required autofocus/>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre: </label>
+                <div class="col-10">
+                  <input type="text" class="form-control" formControlName="nombre" required autofocus/>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-2 col-form-label">Descripción: </label>
+                  <div class="col-10">
+                    <textarea type="text" class="form-control" formControlName="descripcion" required autofocus></textarea>
+                  </div>
+                </div>
+              <div class="form-group row">
+                <label class="col-2 col-form-label"> Sección </label>
+                <select  formControlName="seccion" required>
+                    <option value="" class="col-10 form-control">Sección</option>
+                    <option *ngFor="let s of secciones"
+                        [value]="s">
+                         {{s}}
+                    </option>
+                </select>
+              </div>
+              <div class="form-group row">
+                  <div class="col-10">
+                     <button type="submit" class="btn btn-primary" >Asignar Maestro</button>
+                  </div>
+                  <div class="col-2">
+                      <button class="btn btn-outline-secondary" style='width:120px' [routerLink]="['/alumnos/asignaciones']"> <i class='fa fa-chevron-left'></i> Regresar </button>
+                  </div>
+                </div>
+    </form>
+</div>

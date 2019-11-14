@@ -1,0 +1,45 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+  <div class="card-body">
+      <div class='row'>
+          <div class='col-md-2'>Filtrado por: {{listFilter}}</div>
+          <div class='col-md-4'>
+              <input type='text'
+                  [(ngModel)]='listFilter' />
+         </div>
+     </div> 
+     <br>
+     <div class="table-responsive"> 
+        <table class='table'
+        *ngIf='asignaciones && asignaciones.length'> 
+        <thead>
+            <tr>
+             <th>ID de Asignación de Alumno</th>
+             <th>ID Usuario</th>
+             <th>ID Asignatura</th>
+        
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor='let asignacion of filteredAsignaciones'>
+                  <td> <a [routerLink]="['/alumnos/asignaciones', asignacion.id_asignatura_usuario]">{{asignacion.id_asignatura_usuario}}</a></td>
+                  <td>{{asignacion.id_usuario}}</td>
+                  <td> {{asignacion.id_asignatura}}</td>
+                </tr>
+             </tbody> 
+      </table>
+     </div>
+  </div>
+  <div class="card-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p-button label="Nueva Asignación" [routerLink]="['/asignar/alumnos']"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
