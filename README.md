@@ -4,6 +4,10 @@ Aplicación de administración de estudiantes con enfoque de n-tier utilizando S
 Instrucciones 
 - Angular 
   - instalar NodeJS 
-    - Ejecutar el comando npm install -g @angular/cli 
-  - Ejecutar comando npm install sobre la carpeta deseada 
+    - Ejecutar el comando npm install -g @angular/cli
+  - Ejecutar el comando npm install sobre la carpeta deseada 
+  - Ejecutar el comando ng serve sobre la carpeta deseada 
+- Spring Boot
+  - Descargar Spring Suit Tool para ejecutar el codigo deseado 
+  
 
