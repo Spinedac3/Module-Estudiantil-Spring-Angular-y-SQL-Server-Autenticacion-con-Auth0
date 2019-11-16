@@ -1,4 +1,4 @@
-# Module Estudiantil con Spring,Angular y SQLServer (Autenticacion con Auth0)
+# Module Estudiantil con Spring,Angular y SQLServer (Autenticación con Auth0)
 Aplicación de administración de estudiantes con enfoque de n-tier utilizando Spring boot como Framework de Java EE, Angular como Interfaz de Usuario y SQL server como motor de Base de datos 
 
 # Instrucciones 
